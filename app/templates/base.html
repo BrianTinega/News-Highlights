@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        
-    </head>
-    <body>
-        <!-- Content block -->
-
-        {% block content %}
-
-        {% endblock%}
-    </body>
-</html>
+{5 extends 'bootstrap/base.html' %}
+<!-- Navbar block  --> 
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
