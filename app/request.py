@@ -38,7 +38,7 @@ def process_news(news_list):
             news_results.append(news_object)
         return news_results
 
-news_source_url = app.config[" SOURCES_URL"]
+news_source_url = app.config["SOURCES_URL"]
 
 def get_sources():
     get_sources_url = news_source_url.format(api_key)

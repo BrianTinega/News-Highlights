@@ -1,18 +1,27 @@
 {% macro displayNewsList(news_list) %}
   {%for news in news_list%}
-    <div class="card">
-      <div class="card-body">
-        <img src={{news.urlToImage}}  alt= "headlines image">
+     <ul>
+      <div class="card">
+        <div class="card-body">
+           <li><img src={{news.urlToImage}}  alt= "headlines image"></li>
       </div>
     </div>
     <a href="{{news.url}}"><button class="btn btn-success">Full story</button></a>
+   </div>
+  </ul>
       {% endfor %}
-    </div>
-   
- 
+    
+
+  
 {% endmacro %}
+
 {% macro displaySourcesList(sources_list) %}
   {% for sources in sources_list %}
-    {{sources.name}}
+    <ul>
+    <li>{{sources.name}}</li>
+    <a href="{{sources.url}}"><button>Visit Website</button></a>
+  
+    </ul>
+    
   {% endfor %}
 {% endmacro %}
