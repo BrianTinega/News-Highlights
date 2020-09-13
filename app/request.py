@@ -12,7 +12,6 @@ api_key=app.config["NEWS_API_KEY"]
 
 base_url=app.config["TOP_HEADLINES_URL"]
 
-
 def get_news ():
     get_news_url = base_url.format(api_key)
     with urllib.request.urlopen(get_news_url) as url:
@@ -37,3 +36,16 @@ def process_news(news_list):
             news_object = Article(author,description,url,urlToImage,publishedAt,content)
             news_results.append(news_object)
         return news_results
+
+news_source_url = app.config[" SOURCES_URL"]
+
+def get_sources():
+    get_sources_url = news_source_url.format(api_key)
+    with urllib.request.urlopen( get_sources_url)as url:
+        get_sources_data=url.read()
+        get_sources_response = json.loads(get_sources_data)
+        sources_result=None
+        if get_sources_response['sources']:
+            sources_result_list =  get_sources_response['sources']
+            sources_result = process_sources(sources_result_list)
+        return sources_result
