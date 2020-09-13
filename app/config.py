@@ -1,8 +1,9 @@
+
 class Config:
     '''
     General configuration parent class
     '''
-    Top_Headlines_Url='http://newsapi.org/v2/top-headlines?country=us&apiKey={}'
+    TOP_HEADLINES_URL='https://newsapi.org/v2/top-headlines?country=us&category={}&apiKey={}'
     
 
 
@@ -26,3 +27,9 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+
+    
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}

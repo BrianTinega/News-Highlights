@@ -1,1 +1,13 @@
-<h1>Test</h1>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{%block content %}
+<h3> News Headlines</h3>
+<ul>
+  {{macro.displayNewsList(headlines)}}
+</ul>
+<h1>Sports</h1>
+<ul>
+ {{macro.displayNewsList(Sports)}}
+</ul>
+{% endblock %}
