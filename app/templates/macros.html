@@ -1,5 +1,5 @@
 {% macro displayNewsList(news_list) %}
   {%for news in news_list%}
-    {{news.author}}
+    <a href={{news.url}}><img src={{news.urlToImage}}  alt= "headlines image"></a>
   {% endfor %}
 {% endmacro %}
