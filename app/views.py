@@ -4,8 +4,8 @@ from .request import get_news
 
 @app.route('/')
 def index():
-    top = get_news('business')
+    top = get_news()
     print(top)
-    sports_news = get_news('sports')
+    sports_news = get_news()
     print(sports_news)
     return render_template('index.html', headlines = top, sports = sports_news)

@@ -1,5 +1,13 @@
 {% macro displayNewsList(news_list) %}
   {%for news in news_list%}
-    <a href={{news.url}}><img src={{news.urlToImage}}  alt= "headlines image"></a>
-  {% endfor %}
+    <div class="card">
+      <div class="card-body">
+        <img src={{news.urlToImage}}  alt= "headlines image">
+      </div>
+    </div>
+    <a href="{{news.url}}"><button class="btn btn-success">Full story</button></a>
+      {% endfor %}
+    </div>
+   
+ 
 {% endmacro %}
