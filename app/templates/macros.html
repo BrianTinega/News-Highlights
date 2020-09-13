@@ -11,3 +11,8 @@
    
  
 {% endmacro %}
+{% macro displaySourcesList(sources_list) %}
+  {% for sources in sources_list %}
+    {{sources.name}}
+  {% endfor %}
+{% endmacro %}
