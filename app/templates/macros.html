@@ -1,32 +1,59 @@
   {% macro displayNewsList(news_list) %}
     {%for news in news_list%}
-      <li><img src={{news.urlToImage}}  alt= "headlines image" height="200" width ="200"></li>
-      <a href="{{news.url}}"><button class="btn btn-success">Full story</button></a>
+    <div class="card" class="h-100" style="width: 27rem;">
+      <img src="{{news.urlToImage}}" class="card-img-top" height="250" width="250" >
+      <div class="card-body">
+        <h5 class="card-title">{{news.publishedAt |truncate (13)}}</h5>
+        <p class="card-text" class="text-justify" >{{news.description}}</p>
+        <a href="{{news.url}}" class="btn btn-info">Full Story</a>
+      </div>
+    </div>
     {% endfor %}
   {% endmacro %}
   {% macro displayBbcList (bbc_list) %}  
     {% for news in bbc_list %}
-      <img src ={{news.urlToImage}} alt= "bbc headlines image" height = "200" width= "200"><br>
-      <a href = "{{news.url}}"><button class= "btn-success">Full Story</button></a>
+    <div class="card"  class="h-100" style="width: 27rem;">
+      <img src="{{news.urlToImage}}" class="card-img-top" height="250" width="250" >
+      <div class="card-body">
+        <h5 class="card-title">{{news.publishedAt |truncate (13)}}</h5>
+        <p class="card-text" class="text-justify" >{{news.description}}</p>
+        <a href="{{news.url}}" class="btn btn-info">Full Story</a>
+      </div>
+    </div>
     {% endfor %}
   {% endmacro %}
 
   {% macro displaySourcesList(sources_list) %}
       {% for sources in sources_list %}
-      <ul>
-        <li>{{sources.name}}</li>
-        <a href={{sources.url}}><button>Visit Website</button></a>
-        </ul> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card" class ="h-100" style="width: 25rem;" >
+              <div class="card-body">
+                <h5 class="card-title">{{sources.name}}</h5>
+                <p>{{sources.description}}</p>
+                <a href="{{sources.url}}" class="btn btn-info">Visit Website</a><br>
+                
+              </div>
+            </div>
+          </div>
+     
+       
       {% endfor %}   
   {% endmacro %}
 
   {% macro displayTrumpNews(trump_news) %}
     {% for news in trump_news %}
-  
-      <img src ={{news.urlToImage}} alt="trump headlines" height= "200" width="200"><br>
-      <a href = "{{news.url}}"><button class= "btn-success">Full Story</button></a>
-  
-       <p>{{news.author}}/p>
+   
+    <div class="card"  class="h-100" style="width: 27rem;">
+      <img src="{{news.urlToImage}}" class="card-img-top" height="250" width="250" >
+      <div class="card-body">
+        <h5 class="card-title">{{news.publishedAt |truncate (13)}}</h5>
+        <p class="card-text" class="text-justify" >{{news.description}}</p>
+        <a href="{{news.url}}" class="btn btn-info">Full Story</a>
+      </div>
+    </div>
+      
     {% endfor %}
   {% endmacro %} 
     

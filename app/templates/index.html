@@ -1,43 +1,46 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 {% block styles %}
-{{super()}}
-
-<link rel="stylesheet" href="{{url_for('.static', filename='index.css')}}">
+  {{super()}}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+  </style>
+  <link rel="stylesheet" href="{{url_for('.static', filename='css/index.css')}}">
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron">
-  <h3>News Highlights</h3>
-</div>
-<div class ="row">
-  <div class ="col-md-4">
-    <h3> Todays  Headlines</h3>
-    <ul>
-     {{macro.displayNewsList(headlines)}}
-    </ul>
+<div class="container">
+  <div class="jumbotron">
+    <h1>NH</h1>
+    <p>"Your home of global news Updates"</p>
   </div>
-  <div class="col-md-4">
-    {{macro.displayBbcList(bbc_news)}}
+  <h3 class="headline">TODAYS HEADLINES</h3>
+  <div class ="row">
+    <div class ="col-md-4">
+     
+      <ul>
+       {{macro.displayNewsList(headlines)}}
+      </ul>
+    </div>
+    <div class="col-md-4">
+      {{macro.displayBbcList(bbc_news)}}
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+        </div>
+        {{macro.displayTrumpNews(trump_news)}}
+        </div>
+      </div>
+      
   </div>
-  <div class="col-md-4">
-    {{macro.displayTrumpNews(trump_news)}}
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12" class="col-sm-4">
-
-    <h2>News Sources</h2>  
-   
+  <div>
+    <h1>TOP NEWS SOURCES</h1>
     {{macro.displaySourcesList(root_sources)}}
   </div>
+
 </div>
-
-
-
-
-
- 
 
 
 
