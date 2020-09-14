@@ -6,6 +6,7 @@
            <li><img src={{news.urlToImage}}  alt= "headlines image"></li>
       </div>
     </div>
+   
     <a href="{{news.url}}"><button class="btn btn-success">Full story</button></a>
    </div>
   </ul>
@@ -16,12 +17,15 @@
 {% endmacro %}
 
 {% macro displaySourcesList(sources_list) %}
-  {% for sources in sources_list %}
-    <ul>
-    <li>{{sources.name}}</li>
-    <a href="{{sources.url}}"><button>Visit Website</button></a>
   
-    </ul>
-    
-  {% endfor %}
+  <div class ="row">
+    <div class="col-mm-12" class="col-sm-4">
+      {% for sources in sources_list %}
+      <ul>
+        <li>{{sources.name}}</li>
+        <a href={{sources.url}}><button>Visit Website</button></a>
+        </ul> 
+      {% endfor %}   
+    </div>
+  </div>
 {% endmacro %}

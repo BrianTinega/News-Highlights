@@ -54,12 +54,13 @@ def process_sources(sources_list):
     sources_result=[]
     for source in sources_list:
         id = source.get('id')
+        url = source.get('url')
         name = source.get('name')
         description = source.get('description')
         category = source.get('category')
         language = source.get('language')
         country = source.get('country')
-        source_object = Sources (id,name,description,category,language,country)
+        source_object = Sources (id,url,name,description,category,language,country)
         sources_result.append(source_object)
     return sources_result
-
+ 

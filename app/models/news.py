@@ -17,11 +17,12 @@ class Sources:
     '''
     class to define Sources Objects
     '''
-    def __init__(self,id,name,description,category,language,country):
+    def __init__(self,id,url,name,description,category,language,country):
         '''
         method to initialize sources objects
         '''
         self.id =id
+        self.url = url
         self.name = name
         self.description = description
         self.category = category
