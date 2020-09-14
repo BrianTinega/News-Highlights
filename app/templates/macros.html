@@ -1,9 +1,15 @@
 {% macro displayNewsList(news_list) %}
   {%for news in news_list%}
+
      <ul>
       <div class="card">
         <div class="card-body">
-           <li><img src={{news.urlToImage}}  alt= "headlines image"></li>
+          <div class="card-img">
+            <li><img src={{news.urlToImage}}  alt= "headlines image" height="200" width ="200"></li>
+          </div>
+          <div class="card-footer">
+            <p>NEWS</p>
+          </div>
       </div>
     </div>
    
