@@ -1,26 +1,44 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='index.css')}}">
+{% endblock %}
 
-{%block content %}
-<h3> Todays  Headlines</h3>
-<ul>
-  {{macro.displayNewsList(headlines)}}
-</ul>
-<h1>Sports</h1>
-<ul>
- {{macro.displayNewsList(Sports)}}
-</ul>
-<h2>News Sources</h2>
-<div>
-  <div class ="row">
-    <div class= "col-md-12" class= "col-md-4">
-      {{macro.displaySourcesList(root_sources)}}
-    </div>
-  </div>
-  <ul>
-    
-  </ul>
-
+{% block content %}
+<div class="jumbotron">
+  <h3>News Highlights</h3>
 </div>
+<div class ="row">
+  <div class ="col-md-4">
+    <h3> Todays  Headlines</h3>
+    <ul>
+     {{macro.displayNewsList(headlines)}}
+    </ul>
+  </div>
+  <div class="col-md-4">
+    {{macro.displayBbcList(bbc_news)}}
+  </div>
+  <div class="col-md-4">
+    {{macro.displayTrumpNews(trump_news)}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12" class="col-sm-4">
+
+    <h2>News Sources</h2>  
+   
+    {{macro.displaySourcesList(root_sources)}}
+  </div>
+</div>
+
+
+
+
+
+ 
+
+
 
 {% endblock %}
