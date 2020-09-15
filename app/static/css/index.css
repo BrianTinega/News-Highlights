@@ -2,14 +2,29 @@
 
 body {
   font-family: 'Libre Baskerville', serif;
+ 
 }
 .jumbotron {
-  background-color: green;
+  background-color:brown;
+
 }
 h1 {
   text-align:center;
+  background-color: brown;
+  padding: 2.5%;
+  font-weight: bold;
 
 }
 h3 {
   text-align:center;
+  background-color: brown;
+  padding: 2.5%;
+  font-weight: bold;
+}
+p {
+  text-align: center;
+  margin-bottom: 2cm;
+}
+img {
+  border-radius: 10%;
 }

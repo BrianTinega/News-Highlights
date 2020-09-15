@@ -17,7 +17,6 @@
   <h3 class="headline">TODAYS HEADLINES</h3>
   <div class ="row">
     <div class ="col-md-4">
-     
       <ul>
        {{macro.displayNewsList(headlines)}}
       </ul>
@@ -27,21 +26,12 @@
     </div>
     
     <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-        </div>
         {{macro.displayTrumpNews(trump_news)}}
-        </div>
-      </div>
-      
-  </div>
-  <div>
-    <h1>TOP NEWS SOURCES</h1>
-    {{macro.displaySourcesList(root_sources)}}
+    </div>
   </div>
 
+  <h1>TOP NEWS SOURCES</h1>
+  
+      {{macro.displaySourcesList(root_sources)}}
 </div>
-
-
-
 {% endblock %}
